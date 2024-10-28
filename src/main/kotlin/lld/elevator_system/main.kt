@@ -1,21 +1,21 @@
 package lld.elevator_system
 
 fun main() {
-    val elevatorSystem = ElevatorSystem(
-        listOf(
-            Elevator(1, maxFloor = 10),
-            Elevator(2, maxFloor = 10),
-            Elevator(3, maxFloor = 10)
-        )
-    )
+    // Initialize elevators
+    val elevator1 = Elevator(id = 1, maxFloor = 10)
+    val elevator2 = Elevator(id = 2, maxFloor = 10)
+    val elevatorSystem = ElevatorSystem(listOf(elevator1, elevator2))
 
+    // Add external requests
     elevatorSystem.addRequest(Request(floor = 5, type = RequestType.EXTERNAL, direction = Direction.UP))
+    elevatorSystem.addRequest(Request(floor = 2, type = RequestType.EXTERNAL, direction = Direction.UP))
     elevatorSystem.addRequest(Request(floor = 8, type = RequestType.EXTERNAL, direction = Direction.DOWN))
-    elevatorSystem.addRequest(Request(floor = 2, type = RequestType.INTERNAL))
-    elevatorSystem.addRequest(Request(floor = 7, type = RequestType.EXTERNAL, direction = Direction.UP))
-    elevatorSystem.addRequest(Request(floor = 4, type = RequestType.INTERNAL))
+    elevatorSystem.addRequest(Request(floor = 3, type = RequestType.EXTERNAL, direction = Direction.UP))
 
-    repeat(15) {
+    // Step through the system multiple times to process requests
+    repeat(10) {
+        println("=== Step $it ===")
         elevatorSystem.step()
+        Thread.sleep(1000)  // Simulate time between steps
     }
 }
