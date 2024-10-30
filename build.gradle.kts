@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.10"
+
 }
 
 group = "org.example"
@@ -12,6 +13,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("junit:junit:4.13.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
 }
 
 tasks.test {
