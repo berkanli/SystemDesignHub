@@ -1,4 +1,7 @@
-package lld.payment_gateway
+package lld.payment_gateway.repository
+
+import lld.payment_gateway.PaymentStatus
+import lld.payment_gateway.model.Transaction
 
 class InMemoryTransactionRepository : TransactionRepository {
     private val transactions = mutableMapOf<String, Transaction>()

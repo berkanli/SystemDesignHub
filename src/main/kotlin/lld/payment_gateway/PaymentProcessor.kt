@@ -1,5 +1,7 @@
 package lld.payment_gateway
 
+import lld.payment_gateway.model.Transaction
+
 interface PaymentProcessor {
     fun process(transaction: Transaction): PaymentStatus
 }

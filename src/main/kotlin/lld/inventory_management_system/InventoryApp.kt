@@ -24,3 +24,8 @@ class InventoryApp {
         }
     }
 }
+
+fun main() {
+    val inventoryApp = InventoryApp()
+    inventoryApp.run()
+}

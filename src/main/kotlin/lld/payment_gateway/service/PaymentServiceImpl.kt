@@ -1,5 +1,10 @@
-package lld.payment_gateway
+package lld.payment_gateway.service
 
+import lld.payment_gateway.*
+import lld.payment_gateway.model.PaymentRequest
+import lld.payment_gateway.model.PaymentResponse
+import lld.payment_gateway.model.Transaction
+import lld.payment_gateway.repository.TransactionRepository
 
 
 class PaymentServiceImpl(

@@ -1,4 +1,6 @@
-package lld.payment_gateway
+package lld.payment_gateway.model
+
+import lld.payment_gateway.PaymentStatus
 
 data class PaymentResponse(
     val transactionId: String,

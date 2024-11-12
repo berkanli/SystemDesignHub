@@ -1,4 +1,8 @@
-package lld.payment_gateway
+package lld.payment_gateway.service
+
+import lld.payment_gateway.model.PaymentRequest
+import lld.payment_gateway.model.PaymentResponse
+import lld.payment_gateway.PaymentStatus
 
 interface PaymentService {
     fun initiatePayment(request: PaymentRequest): PaymentResponse
