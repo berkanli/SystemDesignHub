@@ -12,10 +12,8 @@ import java.time.LocalDateTime
 
 fun main() {
     val airplane = Airplane("Boeing 737", 180)
-    airplane.seatMap["1A"] = Seat("1A", SeatClass.ECONOMY)
-    airplane.seatMap["1B"] = Seat("1B", SeatClass.ECONOMY)
-    airplane.seatMap["1C"] = Seat("1C", SeatClass.BUSINESS)
 
+    // Initialize flight and assign airplane seats to the flight
     val flight = Flight(
         flightNumber = "FL123",
         origin = "JFK",
@@ -23,7 +21,7 @@ fun main() {
         departureTime = LocalDateTime.of(2023, 11, 30, 10, 0),
         arrivalTime = LocalDateTime.of(2023, 11, 30, 13, 0),
         airplane = airplane,
-        seats = airplane.seatMap.values.toMutableList()
+        seats = initializeSeatsForFlight()
     )
 
     val flights = mutableListOf(flight)
@@ -64,4 +62,12 @@ fun main() {
             println("Error: Unable to cancel reservation.")
         }
     }
+}
+
+fun initializeSeatsForFlight(): MutableList<Seat> {
+    return mutableListOf(
+        Seat("1A", SeatClass.ECONOMY),
+        Seat("1B", SeatClass.ECONOMY),
+        Seat("1C", SeatClass.BUSINESS)
+    )
 }

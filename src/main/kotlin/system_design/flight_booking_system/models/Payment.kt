@@ -7,14 +7,4 @@ data class Payment(
     val amount: Double,
     val reservation: Reservation,
     var status: PaymentStatus = PaymentStatus.PENDING
-) {
-    fun completePayment() {
-        status = PaymentStatus.COMPLETED
-        reservation.confirmReservation()
-    }
-
-    fun failPayment() {
-        status = PaymentStatus.FAILED
-        reservation.cancelReservation()
-    }
-}
+)

@@ -47,7 +47,8 @@ class FlightService(private val flights: MutableList<Flight>) {
     }
 
     fun cancelReservation(reservation: Reservation): Result<Unit> {
-        reservation.cancelReservation()
+        reservation.status = ReservationStatus.CANCELLED
+        reservation.seats.forEach { it.isAvailable = true }
         println("Reservation ${reservation.reservationId} has been canceled.")
         return Result.success(Unit)
     }
