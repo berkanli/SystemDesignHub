@@ -31,16 +31,20 @@ class OrderService(private val inventoryService: InventoryService, private val p
         return order
     }
 
+    private fun generateOrderId(): String {
+        return "Order - ${System.currentTimeMillis()}"
+    }
+
     fun cancelOrder(orderId: String): Boolean {
-        val order = getOrderById(orderId)
-
-        if (order.status != OrderStatus.PENDING) {
-            throw IllegalStateException("Only pending orders can be cancelled")
-        }
-
-        order.status = OrderStatus.CANCELLED
-        inventoryService.releaseStock(order)
-        paymentService.refundPayment(order)
+//         val order = getOrderById(orderId)
+//
+//        if (order.status != OrderStatus.PENDING) {
+//            throw IllegalStateException("Only pending orders can be cancelled")
+//        }
+//
+//        order.status = OrderStatus.CANCELLED
+//        inventoryService.releaseStock(order)
+//        paymentService.refundPayment(order)
 
         return true
     }
