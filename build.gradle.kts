@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.10"
+    kotlin("plugin.serialization") version "2.1.0"
 }
 
 group = "org.example"
@@ -17,6 +18,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:3.0.0")
     implementation("io.ktor:ktor-server-content-negotiation:2.0.0") // JSON handling
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.0.0") // JSON serialization support
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+
 }
 
 tasks.test {
