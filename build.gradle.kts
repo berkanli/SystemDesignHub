@@ -19,6 +19,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:2.0.0") // JSON handling
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.0.0") // JSON serialization support
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
 }
 
